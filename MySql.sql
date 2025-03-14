@@ -29,7 +29,8 @@ CREATE TABLE users (
     phone VARCHAR(15) NOT NULL,
     sex ENUM('Male', 'Female', 'Other') NOT NULL,
     profile_picture VARCHAR(255),
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'customer') DEFAULT 'customer';
 );
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,8 +42,6 @@ CREATE TABLE products (
 );
 
 
-//After creating the table of the user we have to add the roles to check wheather he is admin or not
-ALTER TABLE users ADD COLUMN role ENUM('admin', 'customer') DEFAULT 'customer';
 // After the creating of the data base we have to update to the admin to change the role from cutomer to admin
 UPDATE users SET role = 'admin' where username = ? 
 //for the user we want we can give the admin roles and he can add update and delete the products
