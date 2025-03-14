@@ -11,7 +11,7 @@ if ($result->num_rows > 0) {
         echo "<div>";
         echo "<h3>" . $product['name'] . "</h3>";
         echo "<img src='{$product['image']}' width = '100' height = '100' alt='Product Image'>";
-        echo "<p>Price: $" . $product['price'] . "</p>";
+        echo "<p>Price: " . $product['price'] . "</p>";
         echo "<form action='cart.php' method='POST'>";
         echo "<input type='hidden' name='product_id' value='" . $product['id'] . "'>";
         echo "<input type='hidden' name='product_name' value='" . $product['name'] . "'>";
