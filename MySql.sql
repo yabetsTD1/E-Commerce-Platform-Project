@@ -43,3 +43,7 @@ CREATE TABLE products (
 
 //After creating the table of the user we have to add the roles to check wheather he is admin or not
 ALTER TABLE users ADD COLUMN role ENUM('admin', 'customer') DEFAULT 'customer';
+// After the creating of the data base we have to update to the admin to change the role from cutomer to admin
+UPDATE users SET role = 'admin' where username = ? 
+//for the user we want we can give the admin roles and he can add update and delete the products
+
